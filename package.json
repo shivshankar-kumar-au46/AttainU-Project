@@ -8,7 +8,7 @@
     "start": "nodemon app.js -e js,hbs,css"
   },
   "engines": {
-    "node": "6.9.1"
+    "node": "18.1"
   },
   "author": "",
   "license": "ISC",
