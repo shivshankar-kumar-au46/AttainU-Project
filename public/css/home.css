@@ -1,0 +1,53 @@
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(../images/banner_bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow-x: hidden;
+
+}
+.bestCare{
+    font-family: 'Dancing Script', cursive;
+    color:#3a86ff;
+    font-weight: 900;
+    font-size: 4.2rem;
+    text-align: center;
+    
+}
+.tag{
+    margin: 200px 0px 0px 0px;
+    font-weight: bold;
+    /* color: black; */
+}
+
+
+.learnbtn{
+    text-decoration: none !important;
+    width: 100px;
+    padding: 13px;
+    background-color: #3a86ff;
+    position: relative;
+    left: 23.5rem;
+    top: 1.5rem;
+    color: aliceblue;
+
+
+}
+
+.navbar-brand{
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 2.25rem !important;
+    text-decoration: none;
+    white-space: nowrap;
+    margin-left: 1rem !important;
+}

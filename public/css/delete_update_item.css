@@ -1,0 +1,51 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-image: url('../images/banner_bg.png');
+}
+
+.delBtn{
+    padding: 20px;
+    font-size: 10px;
+}
+
+.icon{
+    display: flex;
+    justify-content: end;
+    padding: 10px;
+}
+.innerDiv{
+    display: flex;
+    gap: 2rem;
+    cursor: pointer;
+}
+
+.updateBtn{
+    color: green;
+}
+.deleteBtn{
+    color: red;
+}
+.doneBtn{
+    color: blue;
+}
+
+.updateField{
+    outline: none;
+}
+
+.taskText{
+    background-color: transparent;
+    border: 0px solid;
+    height: 20px;
+    width: 200px;
+    outline-style: none;
+}
+.rounded{
+/* background-color: #05080d31;
+ */
+ background-color: rgba(255, 0, 0, 0.4);
+}

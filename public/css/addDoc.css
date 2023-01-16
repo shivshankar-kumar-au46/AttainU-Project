@@ -1,0 +1,41 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #207af7;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width:1000px){
+    body{
+        background-color: #207af7;
+        background-image: none;
+    }
+    
+}
+
+.addDocImg{
+    background-image: url(../images/addDoc.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 1rem;
+    border-radius: 5px;
+}
+
+.docForm, .empForm{
+    border-radius: 10px;
+    background: #ffffff45;
+    font-weight: 600;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* padding: 0px !important; */
+}
+
+
+@media screen and (max-width:700px) {
+    .empForm, .docForm{
+        width: 100%;
+    }
+}
+
+.empform{
+    margin-top: 67px;
+}

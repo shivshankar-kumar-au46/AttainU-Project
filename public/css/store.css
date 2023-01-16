@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root{
+	--main-bg: #fff;
+	--card-bg: #fff;
+	--card-shadow: rgb(220, 226, 247);
+	--card-hover-shadow: rgb(182, 189, 209);
+}
+
+body{
+	background-image: url(../images/store_bg.jpeg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	
+}
+
+.main{
+	width: 100%;
+	height: 100vh;
+	display: grid;
+	justify-content: center;
+	align-content: center;
+}
+
+.card{
+	/* width: 300px;
+	height: 290px;
+	background-color: var(--card-bg);
+	box-shadow: 0 0 10px 2px #aaa;
+	transition: 0.8s ease-out; */
+	width: 18rem;
+	margin: 10px;
+	/* gap: 1rem; */
+}
+
+.card:hover{
+	box-shadow: 0 0 50px -5px var(--card-hover-shadow);
+	transition: 0.8s ease-in;
+}
+
+ .card img{
+	width: 100%;
+} 	
+
+.info{
+	padding: 1rem;
+	display: grid;
+	grid-template-columns: 6fr 1fr;
+}
+
+h3{
+	align-self: center;
+}
+
+.d-block{
+	align-self: center;
+	justify-self: center;
+	background-color: rgb(54, 196, 54);
+	color: #fff;
+	padding: 0.5rem 0.2rem;
+	border-radius: 4px;
+} 
+
+
+.del_upd_itm{
+	display: flex;
+	justify-content: space-between;
+}
+
+.bi-x-square, .bi-pencil-square{
+	cursor: pointer;
+}
+
+.bi-x-square{
+	color: red;
+}
+
+.bi-pencil-square{
+	color: green;
+}
+.addproduct{
+	margin-top: 32px;
+}
