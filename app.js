@@ -12,7 +12,6 @@ const hbs = require('hbs');
 const { initializingPassport } = require('./passportConfig');
 
 
-
 connectDB();
 
 
