@@ -3,7 +3,7 @@ const router = express.Router();
 const { isAuthenticated } = require('../passportConfig')
 const { getProduct, addProduct, getProductForm, showProduct, getProductByID, updateProduct, getCart,  } = require('../controller/storeController')
 
-
+/** HTTP Request */ 
 router.get('/showProduct', isAuthenticated, showProduct)
 router.get('/getProduct', isAuthenticated, getProduct)
 router.get('/getProductForm', isAuthenticated, getProductForm)

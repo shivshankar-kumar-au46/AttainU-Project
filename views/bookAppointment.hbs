@@ -28,29 +28,42 @@
       </div>
 <div class="row empform">
             <div class="col m-3 ms-3 shadow p-3 mb-5  DocForm rounded">
+               {{#if message}}
+    <div style="text-align: center" class="alert alert-{{message.type}} text-success">
+      <strong>{{message.intro}}</strong> {{message.message}}
+    </div>
+
+         {{/if}}
               <h2 class="contro-text text-center fw-bold text-white">Appointment</h2>
-                <form>
+                <form accept="/bookAppointment" method="post">
                     <div class="mb-3">
                       <label for="name" class="form-label">Patient Name</label>
-                      <input type="text" name="name" class="form-control" id="name">
+                      <input type="text" name="name" class="form-control" id="name" name="name">
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email
                         </label>
-                        <input type="email" class="form-control" name="email" id="email">
+                        <input type="email" class="form-control" name="username" id="email">
                       </div>
                     <div class="mb-3">
                         <label for="phone" class="form-label">Phone
                         </label>
-                        <input type="number" class="form-control" id="phone">
+                        <input type="number" class="form-control" id="phone" name="phone">
                       </div>
-                    <select class="form-select mt-4" aria-label="Default select example">
+                    <select class="form-select mt-4" aria-label="Default select example" name="department">
                         <option selected>Department</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value="Department">cardiologist</option>
+                            <option value="Department">cardiologist</option>
+                            <option value="Department">gynecologist</option>
+                            <option value="Department">chiropractor</option>
+                            <option value="Department">dentist</option>
+                            <option value="Department">radiologist</option>
+                            <option value="Department">neurologist</option>
+                            <option value="Department">oncologist</option>
+                            <option value="Department">psychiatrist</option>
+                            <option value="Department">others</option>
                       </select>
-                    <select class="form-select mt-4" aria-label="Default select example">
+                    <select class="form-select mt-4" aria-label="Default select example" name="doctors">
                         <option selected>Doctors</option>
                         <option value="doctor">Dr. vikram Singh</option>
                         <option value="doctor">Dr. Minakshi Sharma</option>

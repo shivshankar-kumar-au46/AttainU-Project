@@ -45,6 +45,7 @@ const getEmployees = (req,res) => {
 
 const addEmployees = async (req,res) => {
     const newEmp = req.body;
+    console.log(newEmp)
         if(req.body.name == '' || req.body.username=='' || req.body.phone==''){
             req.session.message = {
               type: 'danger',
@@ -60,8 +61,11 @@ const addEmployees = async (req,res) => {
             const user = await EmpModel.findOne({name,username,phone})
         if (user)  return res.send('User already exist')
         const userCreated = await EmpModel.create(req.body)
-                if(userCreated) return res.send('Registered Successfully !')
-        res.redirect('/dashboard')
+        req.session.message = {
+          type: 'success',
+          intro: 'You are now registered! ',
+      }
+        res.redirect('/getEmployees')
            }catch (error) {
         req.session.message = {
             type: 'danger',

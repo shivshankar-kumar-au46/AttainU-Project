@@ -1,14 +1,14 @@
 // Modules
-require('dotenv').config();
+
 const express = require('express'); 
 const connectDB  = require('./dbConfig');
 const cookieParser = require('cookie-parser');
-const session = require('express-session')
-const flash = require('express-flash')
-const path  = require('path')
-const bodyParser = require('body-parser')
+const session = require('express-session');
+const path  = require('path');
+const bodyParser = require('body-parser');
 const passport = require('passport');
-const hbs = require('hbs')
+const { COOKIE_SEC } = require('./env');
+const hbs = require('hbs');
 const { initializingPassport } = require('./passportConfig');
 
 
@@ -23,13 +23,12 @@ const app = express();
 
 
 // middlewares
-app.use(flash());
 app.use(express.static('public'));
 app.use(bodyParser.json()); 
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(cookieParser('secret'));
 app.use(session({
-  secret: process.env.COOKIE_SEC,
+  secret: COOKIE_SEC,
   resave: false,
   saveUninitialized: false,
   cookie: {maxAge: 1000 * 60 * 6 * 24}  //24 hours
@@ -83,6 +82,6 @@ const PORT = process.env.PORT || 8866;
 
 // Start Application
 app.listen(PORT,()=>{
-    console.log('server started');
+    console.log(`Server running on http://localhost:${PORT}`);
     
 })

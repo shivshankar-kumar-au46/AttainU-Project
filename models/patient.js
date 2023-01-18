@@ -1,7 +1,5 @@
 const mongoose = require('mongoose');
-const _ = require('lodash');
-var {scoreOfDisease, Disease} = require('./diseases.js');
-var rooms = require('./rooms.js');
+
 
 // User Schema
 
@@ -15,7 +13,7 @@ const newPatientSchema = mongoose.Schema({
 
 })
 
-const PatientNew = mongoose.model('patient', newPatientSchema)
+const PatientNew = mongoose.model('appointment', newPatientSchema)
 
 
 module.exports = PatientNew;

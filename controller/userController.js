@@ -1,10 +1,6 @@
-const RegisterModel = require('../models/user')
-const passport = require('passport');
-
-
-
-
-
+require('dotenv').config();
+const RegisterModel = require('../models/user');
+const bcrypt = require('bcryptjs')
 
 const home = (req,res) => {
     res.render('home');
@@ -40,10 +36,11 @@ const postRegistered =  async (req, res)=>{
         try {
         const user = await RegisterModel.findOne({fname,email,phone})
         if (user)  return res.send('User already exist')
+        
         const userCreated = await RegisterModel.create(req.body)
         req.session.message = {
             type: 'success',
-            intro: 'You are now registered! ',
+            intro: 'Register Successfully...! ',
             message: 'Please log in.'
         }
         res.redirect('/register')
@@ -66,29 +63,63 @@ const getLogin = (req,res) => {
     res.render('login')
 }
 
-const postLogin = async (req,res) => {
-    if(req.body.username=='' || req.body.password==''){
-        req.session.message = {
-          type: 'danger',
-          intro: 'Empty fields! ',
-          message: 'Please insert the requested information.'
-        }
-        res.redirect('/login')
-      }else{
-        const user = await RegisterModel.findOne(req.body);
-        if(!user){
-            req.session.message = {
-                type: 'danger',
-                intro: 'User Not Found! ',
-                message: 'Please Register First !'
-              }
-              res.redirect('/login')
-        }else {
-            res.redirect('/dashboard')
-        }
-        
-      }
+// const postLogin = async (req,res) => {
+//   console.log(req.body)
+//   const email = req.body.username;
+//   const password = req.body.password;
+//   try {
+//     if(req.body.username=='' || req.body.password==''){
+//       req.session.message = {
+//         type: 'danger',
+//         intro: 'Empty fields! ',
+//         message: 'Please insert the requested information.'
+//       }
+//       res.redirect('/login')
+//     }else{
+//       const user = await RegisterModel.findOne({email:email});
+//       const isMatch = await bcrypt.compare(password, user.password);
+//       if(!isMatch){
+//           req.session.message = {
+//               type: 'danger',
+//               intro: 'User Not Found! ',
+//               message: 'Please Register First !'
+//             }
+//             res.redirect('/login')
+//       }else {
+//           res.redirect('/dashboard')
+//       }
+      
+//     }
+//   } catch (error) {
+//     req.session.message = {
+//       type: 'danger',
+//       intro: 'Something went wrong ',
+//       message: error
+//     }
+//   }
+   
     
+// }
+
+const postLogin = async (req, res) => {
+  console.log(req.body)
+  try {
+    const email = req.body.username;
+    const password = req.body.password;
+
+    const useremail = await RegisterModel.findOne(req.body);
+  console.log(useremail)
+
+    const isMatch = bcrypt.compare(password, useremail.password);
+
+    if(isMatch){
+      res.status(201).render('dashboard')
+    }else{
+      res.send('Invalid Login Details');
+    }
+  } catch (error) {
+    res.status(400).send(error);
+  }
 }
 
 const logout =  (req,res) => {

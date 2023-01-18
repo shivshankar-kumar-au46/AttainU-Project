@@ -1,5 +1,5 @@
 {
-  "name": "nhs-app",
+  "name": "hospital_management_app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,32 +8,26 @@
     "start": "nodemon app.js -e js,hbs,css"
   },
   "engines": {
-    "node": "18.1"
+    "node": "18.10.0"
   },
-  "author": "",
+  "author": "shiv",
   "license": "ISC",
   "dependencies": {
-    "axios": "^1.2.2",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.17.0",
-    "bootstrap-icons": "^1.10.3",
-    "connect": "^3.7.0",
     "connect-flash": "^0.1.1",
-    "connect-mongo": "^4.6.0",
     "cookie-parser": "^1.4.3",
     "dotenv": "^16.0.3",
     "express": "^4.14.1",
     "express-flash": "^0.0.2",
-    "express-handlebars": "^3.0.0",
     "express-messages": "^1.0.1",
     "express-session": "^1.17.3",
     "express-validator": "^3.1.2",
     "hbs": "^4.0.1",
     "is-valid-date": "0.0.1",
-    "lodash": "^4.17.4",
-    "mongo": "^0.1.0",
-    "mongodb": "^4.13.0",
+    "mailgen": "^2.0.27",
     "mongoose": "^6.8.2",
+    "nodemailer": "^6.9.0",
     "passport": "^0.3.2",
     "passport-http": "^0.3.0",
     "passport-local": "^1.0.0",

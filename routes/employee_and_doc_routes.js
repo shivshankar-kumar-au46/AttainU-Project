@@ -3,7 +3,7 @@ const { getEmployees, addEmployees, addDoctor, getDoctors} = require('../control
 const { isAuthenticated } = require('../passportConfig');
 const router = express.Router();
 
-
+/** HTTP Request */ 
 router.get('/getAllDoctors', isAuthenticated, getDoctors);
 router.post('/addDoctor', isAuthenticated, addDoctor);
 

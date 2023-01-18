@@ -16,9 +16,11 @@
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 <body>
+  
    
   
     <div class="container-fluid">
+      
       <div class="row">
         <div class="col-12">
           <nav class="row addcart">
@@ -29,14 +31,13 @@
           </nav>
         </div>
       </div>
-       {{#if message}}
+        <div class="row" style="position: relative; margin-top: 4rem">
+            {{#if message}}
     <div style="text-align: center" class="alert alert-{{message.type}} text-success">
-      <button type="button"  data-dismiss="alert">&times;</button>
       <strong>{{message.intro}}</strong> {{message.message}}
     </div>
 
          {{/if}}
-        <div class="row" style="position: relative; margin-top: 4rem">
             <div class="col m-3 border-warning shadow p-3 mb-5   docForm rounded">
               <h2 class="contro-text text-center fw-bold text-white">Add Doctor</h2>
                 <form action="/addDoctor" method="post">

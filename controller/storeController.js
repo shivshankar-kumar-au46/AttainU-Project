@@ -49,16 +49,6 @@ const getProductByID = async (req,res) => {
 
 }    
 
-// const updateProduct = async (req,res) => {
-//     const updated = req.body;
-//     try {
-//         const updated_product = await StoreModel.findByIdAndUpdate(updated);
-//         res.status(200).send({status:'success',updated_product,msg:'product updated successfully'})
-//     } catch (error) {
-//         res.status(400).send({status:'error',error,msg:'product updated successfully'})
-        
-//     }
-// }
 
 
 const updateProduct = async (req,res) => {

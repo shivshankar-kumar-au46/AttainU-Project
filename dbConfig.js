@@ -1,5 +1,5 @@
+const { URL } = require('./env');
 const mongoose = require('mongoose');
-const URL = "mongodb+srv://shivaverma:12345@cluster0.gxgezv9.mongodb.net/test"
 async function connectDB() {
     try {
        await mongoose.connect(URL,{dbName:'hospitalManagement'})
