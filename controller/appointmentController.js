@@ -1,12 +1,13 @@
-const PatientNew = require('../models/patient');
+const PatientNew = require('../models/patient'); // Importing patient model from models repo.
 
 
+// [GET req] Render appointment page
 const getAppointment = (req,res) => {
     res.render('bookAppointment');
 }
 
 
-
+// POST req for booking new appointment
 const postAppointment =  async (req, res)=>{
     if(req.body.name == '' || req.body.username=='' || req.body.phone==''){
       req.session.message = {
@@ -48,9 +49,33 @@ const postAppointment =  async (req, res)=>{
     }
   }
 
+// Show  Appointment  page
+const appointmentPage = async (req, res) => {
+    res.render('allAppointment')
+}  
+
+//  Get all Appointment --Admin
+const showAppointment = async (req, res, next) => {
+  const allAppointment = await PatientNew.find();
+
+  if(!allAppointment){
+    res.status(404).send({
+      success:false,
+      message:"No Appointment Found"
+    })
+  }
+    res.status(200).send({
+      success:true,
+      allAppointment
+    })
+}
 
 
+// exporting all above handlers/controllers function
 module.exports = {
     getAppointment,
-    postAppointment
+    postAppointment,
+    showAppointment,
+    appointmentPage
 }
+

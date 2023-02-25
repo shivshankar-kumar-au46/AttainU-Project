@@ -5,6 +5,7 @@
 */
 const mongoose = require ('mongoose');
 const bcrypt = require ('bcryptjs');
+const jwt = require ('jsonwebtoken')
 
 
 const newUserSchema =  mongoose.Schema({
@@ -32,10 +33,12 @@ const newUserSchema =  mongoose.Schema({
     gender:{
         type:String,
         required:true
+    },
+    is_Admin:{
+        type:Boolean,
+        default:false
     }
 })
-
-
 
 
 newUserSchema.pre('save', async function (next) {

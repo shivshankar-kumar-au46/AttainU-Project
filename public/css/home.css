@@ -1,6 +1,4 @@
 
-
-
 *{
     margin: 0;
     padding: 0;
@@ -51,3 +49,10 @@ body{
     white-space: nowrap;
     margin-left: 1rem !important;
 }
+
+ /* about us  */
+
+ .about-us{
+    background-color: yellow;
+ }
+

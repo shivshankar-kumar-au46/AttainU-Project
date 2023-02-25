@@ -6,12 +6,14 @@ const router = express.Router()
 /** HTTP Request */ 
 router.get('/',home)
 
+router.get('/register',getRegistered)
+router.post('/register',postRegistered)
+
 router.get('/login',getLogin)
 router.post('/login', passport.authenticate("local",{failureRedirect:"/register", successRedirect:"/dashboard"}) ,postLogin)
 
 
-router.get('/register',getRegistered)
-router.post('/register',postRegistered)
+
 
 router.get('/logout', logout);
 

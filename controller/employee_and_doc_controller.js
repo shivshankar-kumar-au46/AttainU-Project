@@ -1,11 +1,15 @@
 
-const DocModel = require('../models/employee_and_doc_models')
-const EmpModel = require('../models/employee_and_doc_models')
+const DocModel = require('../models/employee_and_doc_models') // importing doctor model form db
+const EmpModel = require('../models/employee_and_doc_models') // importing employee model fromm db
 
+
+// [GET req] Render new doctor form page
 const getDoctors =  (req,res) => {
     res.render('addDoctors')
 }
 
+
+// POST req for adding new doctor
 const addDoctor = async (req,res) => {
     const newDoc = req.body;
     
@@ -38,11 +42,13 @@ const addDoctor = async (req,res) => {
 }
 
 
-
+// [GET req] Render new employee form page
 const getEmployees = (req,res) => {
     res.render('addEmployee')
 }
 
+
+// POST req for adding new employee
 const addEmployees = async (req,res) => {
     const newEmp = req.body;
     console.log(newEmp)
@@ -79,7 +85,7 @@ const addEmployees = async (req,res) => {
 }
 
 
-
+// exporting all above handlers/controllers function
 module.exports = {
     getEmployees,
     addEmployees,
